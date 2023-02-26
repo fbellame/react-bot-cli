@@ -23,13 +23,12 @@ function App() {
   };
 
   const handleButtonClick = () => {
-    console.log(JSON.stringify({ question: text, option: selectedOption, max_token: number, temperature: temperature, CHAT_TOKEN: 'Y2hhYm90ZQo=' }));
     fetch('http://localhost:8000/chat', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ question: text, option: selectedOption, max_token: number, temperature: temperature, CHAT_TOKEN: 'Y2hhYm90ZQo=' })
+      body: JSON.stringify({ question: text, option: selectedOption, max_token: number, temperature: temperature, CHAT_TOKEN: '' })
     })
     .then(response => response.json())
     .then(data => {
